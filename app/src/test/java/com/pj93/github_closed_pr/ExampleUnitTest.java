@@ -1,4 +1,4 @@
-package com.example.github_closed_pr;
+package com.pj93.github_closed_pr;
 
 import org.junit.Test;
 
