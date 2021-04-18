@@ -38,6 +38,10 @@ public class ItemViewImpl implements ItemView {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(binding.rvItems.getContext(), LinearLayoutManager.VERTICAL);
         binding.rvItems.addItemDecoration(dividerItemDecoration);
         //TODO: Pagination logic can be placed here, Unable to find pagination in v3 of api.github APIs
+
+        binding.retry.setOnClickListener((View view) -> {
+            init();
+        });
         init();
     }
 
@@ -48,6 +52,8 @@ public class ItemViewImpl implements ItemView {
 
     @Override
     public void showProgressBar(boolean show) {
+        binding.someIssue.setVisibility(View.GONE);
+        binding.retry.setVisibility(View.GONE);
         if (show) {
             progressDialog.setTitle(R.string.elves);
             progressDialog.setMessage(activity.getString(R.string.elves_facebook));
@@ -61,6 +67,7 @@ public class ItemViewImpl implements ItemView {
     public void error(Throwable throwable) {
         showProgressBar(false);
         binding.someIssue.setVisibility(View.VISIBLE);
+        binding.retry.setVisibility(View.VISIBLE);
         Toast.makeText(activity, R.string.generic_issue, Toast.LENGTH_LONG).show();
     }
 

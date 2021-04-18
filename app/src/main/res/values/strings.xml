@@ -3,4 +3,5 @@
     <string name="generic_issue">Please connect to internet and relaunch application or try after some time.</string>
     <string name="elves">"Elves are fetching "</string>
     <string name="elves_facebook">closed PRs of facebook/react repo</string>
+    <string name="retry">Retry</string>
 </resources>
